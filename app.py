@@ -1,13 +1,13 @@
 import os
 from flask import Flask,jsonify,request
 
-fibo = Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def fibon():
     p = 1
     a = 0
-    r = "0, "
+    r = "0,"
     
     for i in range(51):
         tmp = p
@@ -18,6 +18,6 @@ def fibon():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))
-    fibo.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
         
